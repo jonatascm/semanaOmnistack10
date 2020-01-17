@@ -1,11 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
-const connectionString = require('./mongooseConectionString');
+const { MONGO_URL } = require('../.env');
 
 const app = express();
 
-mongoose.connect(connectionString(),{
+mongoose.connect(MONGO_URL,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
