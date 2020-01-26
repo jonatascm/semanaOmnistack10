@@ -1,19 +1,26 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
+const http = require('http');
+
 const routes = require('./routes');
 const { MONGO_URL } = require('../.env');
+const { setupWebsocket } = require('./websocket');
 
 const app = express();
+const server = http.Server(app);
+
+setupWebsocket(server);
 
 mongoose.connect(MONGO_URL,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
 
-//Entender requisições que tem body json
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
 
-app.listen(1008);
+server.listen(1008, '0.0.0.0');
 
