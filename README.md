@@ -7,7 +7,7 @@ The languages used were: ReactJS, React-Native, NodeJS
 
 # Printscreens
 
-![App Printscreen](devradar-app.jpeg)
+![App Printscreen](devradar-app.jpeg){:height="100px" width="100px"}.
 
-![Web Printscreen](devradar-web.png)
+![Web Printscreen](devradar-web.png){:height="100px" width="100px"}.
 
